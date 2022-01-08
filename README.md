@@ -3,17 +3,16 @@ Foxlab Makerspace in association with GTech - Group of Technology Companies in K
 # About Me
 Hello friends! My name is SHARAN KS and I am currently doing B.Tech in ELECTRONICS AND COMMUNICATION ENGINEERING on KMEA ENGINEERING COLLEGE EDATHALA ERNAKULAM. My areas of interests are EMBEDDED SYSTEMS, MICROCONTROLLERS, IOT, ENTREPRENEURSHIP, INNOVATIOS, MENTORING etc. I used to do small projects using Arduino and nodeMCU boards. I have filed patent on a product called Electrostatic air purifier and currently it was published. 
 # Experiment 1 : Hello World LED Blinking
-A basic program similar to printing "Hello World" in any programming language. The aim is to blink an LED using Arduino Uno Board.
+A basic program similar to printing "Hello World" in any programming language. The aim is to blink an LED using Arduino Uno Board. Currently I am using tinkercad an online stimulator for doing the experiments.   
 
 Arduino Uno is an open-source microcontroller board developed by Arduino.cc. It has several advantages over the conventional microcontrollers. It comes with a pre-tested software and hardware libraries and has its own integrated development environment (IDE). Also it is less expensive & beginner friendly.
 
 ## Components Required  
 * Arduino Uno Board 
-* USB Cable 
 * LED (Any Color) x 1 Nos
 * 220 OHM Resistor X 1 Nos
 * Breadboard 
-* Jumper Wires (Male to Male ) X 2 Nos
+* Connecting wires
 
 ## Circuit Diagram
 ![IMG_20211219_003753](https://user-images.githubusercontent.com/95869156/146653882-325b2538-eec4-43a2-8bfd-78dc7d49bf1b.jpg)
