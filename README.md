@@ -15,8 +15,8 @@ Arduino Uno is an open-source microcontroller board developed by Arduino.cc. It 
 * Connecting wires
 
 ## Circuit Diagram
-![IMG_20211219_003753](https://user-images.githubusercontent.com/95869156/146653882-325b2538-eec4-43a2-8bfd-78dc7d49bf1b.jpg)
-![5h7X9_3102_1627394356](https://user-images.githubusercontent.com/91405741/137279765-8a82a34f-1dc0-4afc-9bd3-a31d7f62c428.png)
+![exp1](https://user-images.githubusercontent.com/55591996/148651893-1275868e-ccea-4fe4-81ed-7f3aa0ae51a3.PNG)
+
 
 
 ## Code
