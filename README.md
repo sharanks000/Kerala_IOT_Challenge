@@ -55,6 +55,7 @@ allowfullscreen></iframe>
 * Yellow M5 LED X 1
 * Green M5 LED X 1
 * 220Ω resistor X 3
+* Connecting wires
 
 ## Circuit Diagram
 
@@ -99,41 +100,38 @@ void loop()
 
 > We often see billboards composed of colorful LEDs. They are constantly changing to form various light effects. In this experiment, we compile a program to simulate LED chasing effect. The long lead of LED is the positive side; short lead is negative.
 ## Components Required
-* Led *6
-* Arduino board *1
-* 220Ω resistor *6
-* Breadboard *1
-* USB cable*1
-* Breadboard wire *13
+* Led X 6
+* Arduino board X 1
+* 220Ω resistor X 6
+* Breadboard X 1
+* Connecting wires
 
 ## Circuit Diagram
 
-![s5yR0_3102_1627567167](https://user-images.githubusercontent.com/91405741/137292096-feb60c91-1a9a-474b-a596-300285f7b011.png)
+![exp 3](https://user-images.githubusercontent.com/55591996/148656072-3079c4e4-d35c-48d1-9515-521e977dfc3b.PNG)
 
 ## Code
 
 ```
-int BASE = 2 ;  // the I/O pin for the first LED
-int NUM = 6;   // number of LEDs
+#define pin 2
+#define num 6
 void setup()
 {
-   for (int i = BASE; i < BASE + NUM; i ++) 
-   {
-     pinMode(i, OUTPUT);   // set I/O pins as output
-   }
+  for(int i=pin;i<pin+num;i++){
+   pinMode(i,OUTPUT); 
+  }
 }
+
 void loop()
 {
-   for (int i = BASE; i < BASE + NUM; i ++) 
-   {
-     digitalWrite(i, LOW);    // set I/O pins as “low”, turn off LEDs one by one.
-     delay(200);        // delay
-   }
-   for (int i = BASE; i < BASE + NUM; i ++) 
-   {
-     digitalWrite(i, HIGH);    // set I/O pins as “high”, turn on LEDs one by one
-     delay(400);        // delay
-   }  
+  for(int i=pin;i<pin+num;i++){
+   digitalWrite(i,HIGH);
+   delay(200); 
+  }
+  for(int i=pin;i<pin+num;i++){
+   digitalWrite(i,LOW);
+   delay(200);
+  }
 }
 ```
 
