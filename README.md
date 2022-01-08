@@ -22,22 +22,23 @@ Arduino Uno is an open-source microcontroller board developed by Arduino.cc. It 
 ## Code
 
 ```
-int ledPin = 10; // define digital pin 10.
+#define LED 8
 void setup()
 {
-pinMode(ledPin, OUTPUT);// define pin with LED connected as output.
+  pinMode(LED, OUTPUT);
 }
+
 void loop()
 {
-digitalWrite(ledPin, HIGH); // set the LED on.
-delay(1000); // wait for a second.
-digitalWrite(ledPin, LOW); // set the LED off.
-delay(1000); // wait for a second
+  digitalWrite(LED, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
 }
 ```
 
 ## Output
-> The LED is blinked with a time interval of 1 second
+ The LED is blinked with a time interval of 1 second
 <iframe width="560" height="315"
 src=
  https://user-images.githubusercontent.com/95869156/146654302-7499a267-e699-4476-86a8-3204b2d5c383.mp4
