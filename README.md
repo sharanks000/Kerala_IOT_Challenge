@@ -1,7 +1,7 @@
 # Kerala_IOT_Challenge
 Foxlab Makerspace in association with GTech - Group of Technology Companies in Kerala is launching our prestigious program “Kerala IoT Challenge 2021”, with a vision to mould 100 IoT experts in Kerala, hosting on the µLearn platform. Kerala IoT Challenge is a program designed in 4 levels followed by a hackathon to identify and train quality industry leaders in the IoT domain, while any novice learner can start with layer 1 and others can enter laterally to the desired layer after an evaluation
 # About Me
-Hi everyone! I'm Ashil George P G.I'm currently pursuing BTech in Electrical and Electronics Engineering from ALBERTIAN INSTITUTE OF SCIENCE AND TECHNOLOGY [AISAT], ERNAKULAM. My major area of interests are IOT,Aeromodelling ,Drones and RC planes piloting,programming etc.
+Hello friends! My name is SHARAN KS and I am currently doing B.Tech in ELECTRONICS AND COMMUNICATION ENGINEERING on KMEA ENGINEERING COLLEGE EDATHALA ERNAKULAM. My areas of interests are EMBEDDED SYSTEMS, MICROCONTROLLERS, IOT, ENTREPRENEURSHIP, INNOVATIOS, MENTORING etc. I used to do small projects using Arduino and nodeMCU boards. I have filed patent on a product called Electrostatic air purifier and currently it was published. 
 # Experiment 1 : Hello World LED Blinking
 A basic program similar to printing "Hello World" in any programming language. The aim is to blink an LED using Arduino Uno Board.
 
