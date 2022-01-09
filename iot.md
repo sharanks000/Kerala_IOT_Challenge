@@ -197,30 +197,31 @@ allowfullscreen></iframe>
 > An experiment to understand the working of a buzzer.
 ## Components Required
 * Arduino Uno
-* Buzzer*1
-* Breadboard*1
-* Breadboard Jumper Wire*2
-* USB cable*1
+* Buzzer x 1
+* Breadboard x 1
+* Connecting wires
 
 ## Circuit Diagrams
 
-![BBr05_3102_1628160460](https://user-images.githubusercontent.com/91405741/137346830-1fa2408c-2a1d-4fdf-a049-5736aeb803ec.png)
-
 ![e9Pdc_3102_1628160446](https://user-images.githubusercontent.com/91405741/137346912-0f871dbf-8e86-4734-a337-fceeff454e33.png)
-![IMG_20211231_000540](https://user-images.githubusercontent.com/95869156/147783760-0cd71094-c9da-48f7-a630-693c814f329e.jpg)
+![exp 5](https://user-images.githubusercontent.com/55591996/148674461-7abb33b8-9be7-4b4e-9edb-6a666fd440e9.PNG)
 
 
 ## Code
 
 ```
-int buzzer=8;// initialize digital IO pin that controls the buzzer
-void setup() 
-{ 
-  pinMode(buzzer,OUTPUT);// set pin mode as “output”
-} 
-void loop() 
+#define buz 3
+void setup()
 {
-digitalWrite(buzzer, HIGH); // produce sound
+  pinMode(buz, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(buz, HIGH);
+  delay(1000);
+  digitalWrite(buz, LOW);
+  delay(1000); 
 }
 ```
 
