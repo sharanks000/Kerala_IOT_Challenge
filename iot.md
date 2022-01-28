@@ -241,10 +241,10 @@ allowfullscreen></iframe>
 > An experiment to understand the working of a RGB LED.
 ## Components Required
 * Arduino Uno
-* USB Cable * 1
-* RGB LED * 1
-* Resistor *3
-* Breadboard jumper wire*5
+* USB Cable x 1
+* RGB LED x 1
+* 220ohm Resistor x 3
+* Breadboard jumper wire x 4
 
 ## Circuit Diagrams
 ![xX9cw_3102_1628160649](https://user-images.githubusercontent.com/91405741/137347719-6966c0b1-021d-471c-b0a7-48d0441752d0.png)
@@ -252,7 +252,7 @@ allowfullscreen></iframe>
 ![A8a40_3102_1628160631](https://user-images.githubusercontent.com/91405741/137347782-e0a8a008-8706-4b7c-ba31-38ef0ab6ca72.png)
 
 ![TefdI_3102_1628167200](https://user-images.githubusercontent.com/91405741/137347822-228ccf9c-3a89-45ba-bb24-c3b0ee587818.png)
-![IMG_20211231_001727](https://user-images.githubusercontent.com/95869156/147783842-52738376-a9c3-4612-8eec-d67cc0b08d5a.jpg)
+![IMG_20220128_233655-min_11zon](https://user-images.githubusercontent.com/55591996/151602025-26de7f58-2c93-424c-aa56-eb6f6ec47fbf.jpg)
 
 ## Code
 
@@ -289,7 +289,7 @@ for(val=0; val<255; val++)
 
 ## Output
 
-> The RGB LED blinks.
+> The RGB LED color changing.
 <iframe width="560" height="315"
 src=
 https://user-images.githubusercontent.com/95869156/147783968-7e6f1a33-a312-44d9-b7cb-fac464fc960c.mp4
