@@ -342,3 +342,63 @@ void loop() {
 ![IMG_20220130_000416-compressed](https://user-images.githubusercontent.com/55591996/151673658-89e2b2e0-2731-4378-b996-343d5c90c469.jpg)
 
 ## Experiment 8 : Flame Sensor
+
+> An experiment to understand the working of a flame sensor
+
+## Flame Sensor
+
+![IDVWv_3102_1628756405](https://user-images.githubusercontent.com/55591996/151690789-70672b9b-bf4a-4714-8f4c-48bf1995c62d.png)
+
+## Components Required
+* Arduino Uno
+* Flame sensor x 1
+* Breadboard x 1
+* Jumper wire x 7
+* buzzer x 1
+* GREEN LED x 1
+* RED LED x 1
+* 10k Resistor x 1
+
+## Circuit Diagrams
+
+![gI9NP_3102_1628756600](https://user-images.githubusercontent.com/55591996/151690868-ae0d09fd-c798-42e0-a970-07ab95cede64.png)
+![1WFNu_3102_1628756689](https://user-images.githubusercontent.com/55591996/151690874-8cd02018-d350-4e8d-8297-2f5998956fda.png)
+
+
+## Code
+
+```
+#define IR A0
+#define buzz 2
+#define led1 3
+#define led2 4
+int x=0;
+void setup() {
+  pinMode(IR,INPUT);
+  pinMode(buzz,OUTPUT);
+  pinMode(led1,OUTPUT);
+  pinMode(led2,OUTPUT);
+  Serial.begin(9600);
+  }
+
+void loop() {
+  x=analogRead(IR);
+  delay(1000);
+  Serial.println(x);
+  if (x>=200){
+    digitalWrite(buzz,HIGH);
+    digitalWrite(led1,HIGH);
+    digitalWrite(led2,LOW);
+  }
+  else{
+    digitalWrite(buzz,LOW);
+    digitalWrite(led2,HIGH);
+    digitalWrite(led1,LOW);
+  }
+}
+```
+
+## Output
+
+![IMG_20220130_124940-compressed](https://user-images.githubusercontent.com/55591996/151690975-8bd5f168-60e7-486d-b027-d29bb5c100be.jpg)
+![IMG_20220130_125007-compressed](https://user-images.githubusercontent.com/55591996/151690978-21ac7932-87ec-422e-9112-0b6108e3f2ba.jpg)
