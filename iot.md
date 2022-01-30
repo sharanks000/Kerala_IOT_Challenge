@@ -289,6 +289,15 @@ for(val=0; val<255; val++)
 
 ## Output
 ![IMG_20220128_233655-min_11zon](https://user-images.githubusercontent.com/55591996/151602025-26de7f58-2c93-424c-aa56-eb6f6ec47fbf.jpg)
+<iframe width="560" height="315"
+src=
+
+https://user-images.githubusercontent.com/55591996/151711057-3b4a5efb-c0d4-444e-8f98-cc5d6ca80d8a.mp4
+
+
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 ## Experiment 7 : LDR Light Sensor
 
 > An experiment to understand the working of an LDR light Sensor.
@@ -636,4 +645,52 @@ irrecv.resume(); // Receive the next value
 ![IMG_20220130_185623-compressed](https://user-images.githubusercontent.com/55591996/151708608-aa11bde5-95df-4295-be71-00c48d27ee14.jpg)
 
 >When I press the 2nd button on the remote the red LED will glow. And when I pess the next button the RED light will turn off. Like wise all the LED can be turned on and off using the IR receiver and transmitter. 
+
+## Experiment 11 : Potentiometer analog Value Reading
+
+> An experiment to understand the working of a potentiometer.
+
+### POT-Potentiometer
+> Potentiometer also known as POT is a variable resistor used in different circuit applications.
+
+## POT
+![hT9Hz_3102_1629370484](https://user-images.githubusercontent.com/55591996/151710934-5af0ac0c-0169-4833-b06a-15d489c8a649.png)
+
+## Components Required
+
+* Arduino Uno Board
+* Potentiometer x 1
+* YELLOW LED x 1
+* Breadboard x 1
+* Jumper wires x 5
+
+## Circuit Diagrams
+![9xy75_3102_1629370766](https://user-images.githubusercontent.com/55591996/151710991-86c53818-2583-4768-bde3-505553047a05.png)
+
+## Code
+
+```
+#define pot A0
+#define led 11
+int x=0;
+void setup() {
+  pinMode(pot,INPUT);
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  x=analogRead(pot);
+  analogWrite(led,x);
+  Serial.println(x);
+  delay(50);
+}                               
+
+```
+
+## Output
+
+![IMG_20220130_231100](https://user-images.githubusercontent.com/55591996/151711489-3407e851-7bbf-467e-bab5-b5bc1c6f750e.jpg)
+
+![IMG_20220130_231145](https://user-images.githubusercontent.com/55591996/151711511-ad87e457-5756-4239-9b81-6866d2288ff2.jpg)
 
