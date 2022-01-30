@@ -402,3 +402,72 @@ void loop() {
 
 ![IMG_20220130_124940-compressed](https://user-images.githubusercontent.com/55591996/151690975-8bd5f168-60e7-486d-b027-d29bb5c100be.jpg)
 ![IMG_20220130_125007-compressed](https://user-images.githubusercontent.com/55591996/151690978-21ac7932-87ec-422e-9112-0b6108e3f2ba.jpg)
+
+## Experiment 9 : LDR Light Sensor
+
+> An experiment to understand the working of an LM35 temperature Sensor.
+### LM35 : Temperature Sensor
+>LM35 is a widely used temperature sensor with many different package types. At room temperature, it can achieve the accuracy of ±1/4°C without additional calibration processing.
+
+LM35 temperature sensor can produce different voltage by different temperature
+When temperature is 0 ℃, it outputs 0V; if increasing 1 ℃, the output voltage will increase 10 mv.
+## LM35
+![ZAgaD_3102_1628756936](https://user-images.githubusercontent.com/55591996/151696955-95fe5f7c-0135-4473-a749-176059182951.png)
+![3ZHjl_3102_1628757013](https://user-images.githubusercontent.com/55591996/151696973-b93b9154-405d-4f03-9f4b-5735642f37b1.png)
+
+## Components Required
+
+* Arduino Uno Board
+* LM35 x 1
+* GREEN LED x 1
+* RED LED x 1
+* Breadboard x 1
+* Conneting wires
+* Buzzer x 1
+
+## Circuit Diagrams
+![ISH66_3102_1628757240](https://user-images.githubusercontent.com/55591996/151697013-df2d6407-13a9-489c-80ba-d55fb8c82992.png)
+
+## Code
+
+```
+#define sensor A0
+int LEDR=4;
+int LEDG=3;
+int BUZZ=1;
+
+void setup()
+{
+  pinMode(LEDR, OUTPUT);
+  pinMode(LEDG, OUTPUT);
+  pinMode(BUZZ,OUTPUT);
+
+}
+  void loop(){
+    int reading = analogRead(sensor);
+    float voltage = reading * (5.0 / 1024.0);
+    float temp = (voltage - 0.5) * 100;
+  
+  if(temp<=50)
+  {
+     digitalWrite(LEDR,LOW);
+    digitalWrite(LEDG,HIGH);
+    digitalWrite(BUZZ,LOW);
+  
+  }
+  else{
+     digitalWrite(LEDG,LOW);
+     digitalWrite(LEDR,HIGH);
+      digitalWrite(BUZZ,HIGH);
+ 
+   }
+}
+
+  
+                                 
+
+```
+
+## Output
+
+![1](https://user-images.githubusercontent.com/55591996/151697054-4e2df17b-b741-49d9-823d-d90c32635ae3.PNG)
