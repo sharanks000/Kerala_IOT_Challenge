@@ -471,3 +471,169 @@ void setup()
 ## Output
 
 ![1](https://user-images.githubusercontent.com/55591996/151697054-4e2df17b-b741-49d9-823d-d90c32635ae3.PNG)
+
+
+## Experiment 10 : IR Remote Control Using TSOP
+
+> An experiment to understand the working of TSOP1738.
+### TSOP1738 :  IR Receiver Module
+>The signal from the infrared remote controller is a series of binary pulse code. To avoid the other infrared signal interference during the wireless transmission, the signal is pre-modulated at a specific carrier frequency and then send out by an infrared emission diode. The infrared receiving device needs to filter out other waves and receive signals at that specific frequency and to modulate it back to binary pulse code, known as demodulation.
+## TSOP1738
+![image](https://user-images.githubusercontent.com/55591996/151707408-f39d11f9-cd72-40a0-bfc9-263f3508100e.png)
+
+## Components Required
+
+* Arduino Uno Board
+* TSOP1738 x 1
+* GREEN LED x 2
+* RED LED x 2
+* YELLOW LED x 2
+* Breadboard x 1
+* Jumper wires x 10
+* Remote x 1
+
+## Circuit Diagrams
+![ftiO8_3102_1629369813](https://user-images.githubusercontent.com/55591996/151707484-4938121b-6107-4243-9161-ae8b4b786cf4.png)
+
+## Code
+
+```
+#include <IRremote.h>
+int RECV_PIN = 11;
+int LED1 = 2;
+int LED2 = 3;
+int LED3 = 4;
+int LED4 = 5;
+int LED5 = 6;
+int LED6 = 7;
+long on1  = 0x00FF6897;
+long off1 = 0x00FF9867;
+long on2 = 0x00FFB04F;
+long off2 = 0x00FF30CF;
+long on3 = 0x00FF18E7;
+long off3 = 0x00FF7A85;
+long on4 = 0x00FF10EF;
+long off4 = 0x00FF38C7;
+long on5 = 0x00FF5AA5;
+long off5 = 0x00FF42BD;
+long on6 = 0x00FF4AB5;
+long off6 = 0x00FF52AD;
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+// Dumps out the decode_results structure.
+// Call this after IRrecv::decode()
+// void * to work around compiler issue
+//void dump(void *v) {
+//  decode_results *results = (decode_results *)v
+void dump(decode_results *results) {
+  int count = results->rawlen;
+  if (results->decode_type == UNKNOWN) 
+    {
+     Serial.println("Could not decode message");
+    } 
+  else 
+   {
+    if (results->decode_type == NEC) 
+      {
+       Serial.print("Decoded NEC: ");
+      } 
+    else if (results->decode_type == SONY) 
+      {
+       Serial.print("Decoded SONY: ");
+      } 
+    else if (results->decode_type == RC5) 
+      {
+       Serial.print("Decoded RC5: ");
+      } 
+    else if (results->decode_type == RC6) 
+      {
+       Serial.print("Decoded RC6: ");
+      }
+     Serial.print(results->value, HEX);
+     Serial.print(" (");
+     Serial.print(results->bits, DEC);
+     Serial.println(" bits)");
+   }
+     Serial.print("Raw (");
+     Serial.print(count, DEC);
+     Serial.print("): ");
+ for (int i = 0; i < count; i++) 
+     {
+      if((i%2)==1){
+      Serial.print(results->rawbuf[i]*USECPERTICK, DEC);
+     } 
+    else  
+     {
+      Serial.print(-(int)results->rawbuf[i]*USECPERTICK, DEC);
+     }
+    Serial.print(" ");
+     }
+      Serial.println("");
+     }
+void setup()
+ {
+  pinMode(RECV_PIN, INPUT);   
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(LED4, OUTPUT);
+  pinMode(LED5, OUTPUT);
+  pinMode(LED6, OUTPUT);  
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+   irrecv.enableIRIn(); // Start the receiver
+ }
+int on = 0;
+unsigned long last = millis();
+void loop() 
+{
+  if (irrecv.decode(&results)) 
+   {
+    // If it's been at least 1/4 second since the last
+    // IR received, toggle the relay
+    if (millis() - last > 250) 
+      {
+       on =!on;
+//       digitalWrite(8, on ? HIGH : LOW);
+       digitalWrite(13,on?HIGH:LOW);
+       dump(&results);
+      }
+    if (results.value == on1 )
+       digitalWrite(LED1, HIGH);
+    if (results.value == off1 )
+       digitalWrite(LED1, LOW); 
+    if (results.value == on2 )
+       digitalWrite(LED2, HIGH);
+    if (results.value == off2 )
+       digitalWrite(LED2, LOW); 
+    if (results.value == on3 )
+       digitalWrite(LED3, HIGH);
+    if (results.value == off3 )
+       digitalWrite(LED3, LOW);
+    if (results.value == on4 )
+       digitalWrite(LED4, HIGH);
+    if (results.value == off4 )
+       digitalWrite(LED4, LOW); 
+    if (results.value == on5 )
+       digitalWrite(LED5, HIGH);
+    if (results.value == off5 )
+       digitalWrite(LED5, LOW); 
+    if (results.value == on6 )
+       digitalWrite(LED6, HIGH);
+    if (results.value == off6 )
+       digitalWrite(LED6, LOW);        
+    last = millis();      
+irrecv.resume(); // Receive the next value
+  }
+}                          
+
+```
+
+## Output
+
+![IMG_20220130_185551-compressed](https://user-images.githubusercontent.com/55591996/151707820-fd820669-ffcc-4b37-8e13-6f737ce635bf.jpg)
+
+![IMG_20220130_185623-compressed](https://user-images.githubusercontent.com/55591996/151708608-aa11bde5-95df-4295-be71-00c48d27ee14.jpg)
+
+>When I press the 2nd button on the remote the red LED will glow. And when I pess the next button the RED light will turn off. Like wise all the LED can be turned on and off using the IR receiver and transmitter. 
+
