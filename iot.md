@@ -181,7 +181,7 @@ void loop()
 ## Circuit Diagrams
 
 ![e9Pdc_3102_1628160446](https://user-images.githubusercontent.com/91405741/137346912-0f871dbf-8e86-4734-a337-fceeff454e33.png)
-![exp 5](https://user-images.githubusercontent.com/55591996/148674461-7abb33b8-9be7-4b4e-9edb-6a666fd440e9.PNG)
+
 
 
 ## Code
@@ -203,15 +203,7 @@ void loop()
 ```
 
 ## Output
-
-> The Buzzer makes beep sound.
-<iframe width="560" height="315"
-src=
-https://user-images.githubusercontent.com/95869156/147783940-03ee47a1-cac0-42e9-bd27-b81fb6b48179.mp4
-
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+![exp 5](https://user-images.githubusercontent.com/55591996/148674461-7abb33b8-9be7-4b4e-9edb-6a666fd440e9.PNG)
 
 # Experiment 6 : RGB LED
 
@@ -266,8 +258,10 @@ for(val=0; val<255; val++)
 
 ## Output
 ![IMG_20220128_233655-min_11zon](https://user-images.githubusercontent.com/55591996/151602025-26de7f58-2c93-424c-aa56-eb6f6ec47fbf.jpg)
-<iframe src=
+<iframe width="560" height="315"
+src=
 https://user-images.githubusercontent.com/55591996/151711057-3b4a5efb-c0d4-444e-8f98-cc5d6ca80d8a.mp4
+
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
