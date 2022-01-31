@@ -37,15 +37,6 @@ void loop()
 }
 ```
 
-## Output
- The LED is blinked with a time interval of 1 second
-<iframe width="560" height="315"
-src=
- https://user-images.githubusercontent.com/95869156/146654302-7499a267-e699-4476-86a8-3204b2d5c383.mp4
-       
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe> 
 # Experiment 2 : Traffic Light
 
 > In the previous program, we have done the LED blinking experiment with one LED. Now, it’s time to up the stakes and do a bit more complicated experiment-traffic lights. Actually, these two experiments are similar. While in this traffic lights experiment, we use 3 LEDs with different colors rather than 1 LED. 
@@ -92,9 +83,6 @@ void loop()
   delay(500);
 }
 ```
-
-## Output
-
 > In Traffic light the green LED blink about 5 second, then it is turnoff. Then the yellow LED blinks 3 times with a time interval of 0.5 second.Then the red LED blink about 5 seconds. This process continues.
 # Experiment 3 : LED Chasing Effect
 
@@ -135,7 +123,6 @@ void loop()
 }
 ```
 
-## Output
 # Experiment 4 : Button Controlled LED
 
 > An experiment to light an LED using a Push Button.
@@ -152,7 +139,6 @@ void loop()
 
 ![image](https://user-images.githubusercontent.com/55591996/148673943-4e88b419-ef66-4436-bfd3-809f56dfd5e3.png)
 
-![exp4](https://user-images.githubusercontent.com/55591996/148674078-1369d46f-8f98-4c64-bb7b-6f9c8eb29bbf.PNG)
 ## Code
 
 ```
@@ -181,16 +167,7 @@ void loop()
 ```
 ## Output
 
-> When the push button is pressed the LED is turned on otherwise it is off.
-<iframe width="560" height="315"
-src=
-
-https://user-images.githubusercontent.com/95869156/147783915-ff390cb5-625e-48bd-8ccb-b578c90629de.mp4
-
-
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+![exp4](https://user-images.githubusercontent.com/55591996/148674078-1369d46f-8f98-4c64-bb7b-6f9c8eb29bbf.PNG)
 
 # Experiment 5 : Buzzer
 
@@ -289,12 +266,8 @@ for(val=0; val<255; val++)
 
 ## Output
 ![IMG_20220128_233655-min_11zon](https://user-images.githubusercontent.com/55591996/151602025-26de7f58-2c93-424c-aa56-eb6f6ec47fbf.jpg)
-<iframe width="560" height="315"
-src=
-
+<iframe src=
 https://user-images.githubusercontent.com/55591996/151711057-3b4a5efb-c0d4-444e-8f98-cc5d6ca80d8a.mp4
-
-
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
@@ -693,4 +666,128 @@ void loop() {
 ![IMG_20220130_231100](https://user-images.githubusercontent.com/55591996/151711489-3407e851-7bbf-467e-bab5-b5bc1c6f750e.jpg)
 
 ![IMG_20220130_231145](https://user-images.githubusercontent.com/55591996/151711511-ad87e457-5756-4239-9b81-6866d2288ff2.jpg)
+
+
+## Experiment 12 : 7 Segment Display
+
+> An experiment to understand the working of 7 Segment Display.
+
+### 7 Segment Display
+>LED segment display is a semiconductor light-emitting device. Its basic unit is a light-emitting diode (LED). LED segment display can be divided into 7-segment display and 8-segment display according to the number of segments. 8-segment display has one more LED unit ( for decimal point display) than 7-segment one.
+>Here I used Tinkercad platform for stimulating the circuit
+
+![buaPu_3102_1629370988](https://user-images.githubusercontent.com/55591996/151802511-2d9733d7-1e01-440c-942b-6afa70a27d05.png)
+
+![F6Agx_3102_1629371054](https://user-images.githubusercontent.com/55591996/151802682-0742507f-4ec6-4fe1-8db9-c1f58d0b731b.png)
+
+## Components Required
+
+* Arduino Uno Board
+* 7 Segment display x 1
+* 220ohm resistors x 7
+* connecting wires
+
+## Circuit Diagrams
+![segment jpg](https://user-images.githubusercontent.com/55591996/151803806-1eff36ac-53e7-44b6-b99b-c84b92330d61.png)
+
+## Code
+
+```
+int a = 13;     
+int b = 12;      
+int c = 11;    
+int d = 10;    
+int e = 9;     
+int f = 8;    
+int g = 7;
+
+void setup() {                
+ 
+pinMode(a, OUTPUT);      pinMode(b, OUTPUT);     pinMode(c, OUTPUT);
+pinMode(d, OUTPUT);      pinMode(e, OUTPUT);     pinMode(f, OUTPUT);
+pinMode(g, OUTPUT);
+}
+
+
+void loop() {
+
+  digitalWrite(a, HIGH);
+  digitalWrite(b, HIGH);
+  digitalWrite(c, HIGH);
+  digitalWrite(d, HIGH);       //Generating 1
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, HIGH);
+  delay(1000);              
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, HIGH);      //Generating 2
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, HIGH);
+  digitalWrite(g, LOW);
+  delay(1000);              
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);      //Generating 3
+  digitalWrite(e, HIGH);
+  digitalWrite(f, HIGH);
+  digitalWrite(g, LOW);
+  delay(1000);               
+  digitalWrite(a, HIGH);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, HIGH);
+  digitalWrite(e, HIGH);     //Generating 4
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  delay(1000);            
+  digitalWrite(a, LOW);
+  digitalWrite(b, HIGH);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, HIGH);     //Generating 5
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  delay(1000);            
+  digitalWrite(a, LOW);
+  digitalWrite(b, HIGH);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);    //Generating 6
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  delay(1000);               // wait for a second
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, HIGH);
+  digitalWrite(e, HIGH);   //Generating 7
+  digitalWrite(f, HIGH);
+  digitalWrite(g, HIGH);
+  delay(1000);             
+  digitalWrite(a, LOW );
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);     //Generating 8
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  delay(1000);            
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, HIGH);
+  digitalWrite(e, HIGH);    //Generating 9
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  delay(1000);             
+}
+```
+
+## Output
+
+![7segment](https://user-images.githubusercontent.com/55591996/151804184-8957bf07-d72e-4565-a6ae-3015635c937e.PNG)
+
 
