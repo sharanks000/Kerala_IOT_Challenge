@@ -785,3 +785,160 @@ void loop() {
 ![7segment](https://user-images.githubusercontent.com/55591996/151804184-8957bf07-d72e-4565-a6ae-3015635c937e.PNG)
 
 
+## Assignment 1 : Night LED
+
+> Automatic night lamp model using LDR and LED.
+
+## Components Required
+
+* Arduino Uno Board
+* LDR x 1
+* RED LED x 1
+* Breadboard x 1
+* Connection Wires
+
+## Circuit Diagrams
+![assignment 1](https://user-images.githubusercontent.com/55591996/151858988-5fd53128-0227-4edf-aa8a-7ac2bf674d1b.PNG)
+
+## Code
+
+```
+#define ldr A0
+#define led 2
+int x;
+void setup() {
+  pinMode(ldr, INPUT);
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  x=analogRead(ldr);
+  Serial.println(x);
+  if(x>=100){
+    digitalWrite(led,HIGH);
+    Serial.println("HIGH");
+  }
+  else{
+    digitalWrite(led,LOW);
+    Serial.println("LOW");
+  }
+  }
+
+```
+
+## Output
+Tinkercad link :
+
+
+## Assignment 2 : Digital dice
+
+> A digital dice using 6 LEDs and 1 push button.
+## Components Required
+
+* Arduino Uno Board
+* Push button x 1
+* RED LED x 6
+* Breadboard x 1
+* Connection Wires
+
+## Circuit Diagrams
+![assignment 2](https://user-images.githubusercontent.com/55591996/151860133-f2ef6985-0542-4e24-8c5f-db4a2aac73ed.PNG)
+
+
+## Code
+
+```
+
+#define DEBUG 0
+int first = 2;
+int second = 3;
+int third = 4;
+int fourth = 5;
+int fifth = 6;
+int sixth = 7;
+int button = 8;
+int pressed = 0;
+
+void setup() {
+  for (int i=first; i<=sixth; i++) {
+    pinMode(i, OUTPUT);
+  }
+ 
+  pinMode(button, INPUT);
+  
+  randomSeed(analogRead(0));
+  #ifdef DEBUG
+    Serial.begin(9600);
+  #endif
+
+}
+
+void buildUpTension() {
+  for (int i=first; i<=sixth; i++) {
+    if (i!=first) {
+      digitalWrite(i-1, LOW);
+    }
+    digitalWrite(i, HIGH);
+    delay(100);
+  }
+  // right to left
+  for (int i=sixth; i>=first; i--) {
+    if (i!=sixth) {
+      digitalWrite(i+1, LOW);
+    }
+    digitalWrite(i, HIGH);
+    delay(100);
+  }
+}
+
+void showNumber(int number) {
+  digitalWrite(first, HIGH);
+  if (number >= 2) {
+    digitalWrite(second, HIGH);
+  }
+  if (number >= 3) {
+    digitalWrite(third, HIGH);    
+  }
+  if (number >= 4) {
+    digitalWrite(fourth, HIGH);    
+  }
+  if (number >= 5) {
+    digitalWrite(fifth, HIGH);    
+  }
+  if (number == 6) {
+    digitalWrite(sixth, HIGH);    
+  }
+}
+
+int throwDice() {
+  int randNumber = random(1,7);
+  
+  #ifdef DEBUG
+    Serial.println(randNumber);
+  #endif
+  
+  return randNumber;
+}
+
+void setAllLEDs(int value) {
+  for (int i=first; i<=sixth; i++) {
+    digitalWrite(i, value);
+  }
+}
+
+void loop() {
+  pressed = digitalRead(button);
+
+  if (pressed == HIGH) {
+    setAllLEDs(LOW);
+    
+    buildUpTension();
+    int thrownNumber = throwDice();
+    showNumber(thrownNumber);
+  } 
+
+}
+```
+
+## Output
+Tinkercad link :
